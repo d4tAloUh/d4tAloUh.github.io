@@ -1,12 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socks</title>
+    <script src="https://kit.fontawesome.com/4ff8e2983e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" href="./css/main.css">
-    <title>Title</title>
+    <link rel="icon" href="../IMG/img_random.jpg ">
 </head>
 <body>
-    <p> if so </p>
-    <script src="./js/main.js"></script>
+<div class="main-container">
+    <nav class="navbar">
+        <div class="navbar-center">
+            <div class="cart-btn">
+            <span class="nav-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </span>
+                <div class="cart-items">0</div>
+            </div>
+            <div class="navbar-title">
+                <Strong><a href="#">Socks</a></Strong>
+            </div>
+            <div class="dropdown dropdown-menu-left">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Link1</a></li>
+                    <li><a href="#" class="dropdown-item">Link2</a></li>
+                    <li><a href="#" class="dropdown-item">Link3</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="products">
+        <div class="section-title">
+            <h2>New-Ones</h2>
+        </div>
+        <div class="products-table">
+            <article class="product">
+                <div class="img">
+                    <img src="../IMG/img_random.jpg " alt="product" class="product-img">
+                    <button class="bag-btn" data-id="1">
+                        <i class="fas fa-shopping-cart"></i>
+                        add to cart
+                    </button>
+                </div>
+                <h3>Socks1</h3>
+                <h4 class="sale">$10.99</h4>
+                <h4 class="price">$7.99</h4>
+            </article>
+            <article class="product">
+                <div class="img">
+                    <img src="../IMG/img_random.jpg " alt="product" class="product-img">
+                    <button class="bag-btn" data-id="2">
+                        <i class="fas fa-shopping-cart"></i>
+                        add to cart
+                    </button>
+                </div>
+                <h3>Socks2</h3>
+                <h4 class="price">$16.02</h4>
+            </article>
+            <article class="product">
+                <div class="img">
+                    <img src="../IMG/img_random.jpg " alt="product" class="product-img">
+                    <button class="bag-btn" data-id="3">
+                        <i class="fas fa-shopping-cart"></i>
+                        add to cart
+                    </button>
+                </div>
+                <h3>Socks3</h3>
+                <h4 class="price">$5.99</h4>
+            </article>
+            <article class="product">
+                <div class="img">
+                    <img src="../IMG/img_random.jpg " alt="product" class="product-img">
+                    <button class="bag-btn" data-id="4">
+                        <i class="fas fa-shopping-cart"></i>
+                        add to cart
+                    </button>
+                </div>
+                <h3>Socks4</h3>
+                <h4 class="price">$11.99</h4>
+            </article>
+
+
+        </div>
+    </section>
+
+
+    <div class="cart-overlay">
+        <div class="cart">
+            <span class="close-cart"><i class="far fa-window-close"></i></span>
+            <h2>your cart</h2>
+            <div class="cart-content"></div>
+            <div class="cart-footer">
+                <h3>your total : $<span class="cart-total">0</span></h3>
+                <button class="clear-cart cart-button">clear cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="page-footer ">
+
+    <!-- Copyright -->
+    <div class="text-center py-3">2019 Copyright:
+        <a href="https://instagram.com/alouh_kostrulya" target="_blank"> OmegaLUL</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="./js/main.js"></script>
+
 </body>
 </html>

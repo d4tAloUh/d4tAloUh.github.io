@@ -19,6 +19,9 @@ body {
 *:after {
     box-sizing: border-box;
 }
+li, ul{
+    list-style:none;
+}
 .main-container{
     top: 0;
     right: 0;
@@ -26,7 +29,7 @@ body {
     min-height: 100%;
     overflow: auto;
 }
-
+/*Navbar*/
 .navbar {
     position: fixed;
     top: 0;
@@ -35,7 +38,7 @@ body {
     display: flex;
     align-items: center;
     background: #db154a;
-    z-index: 1;
+    z-index: 3;
 }
 .navbar-center {
     width: 100%;
@@ -110,15 +113,95 @@ body {
     transition: all 0.3s ease-out;
     cursor: pointer;
 }
-.banner-btn:hover {
-    background: transparent;
-    color: #addb15;
+/*categories*/
+.categories-container{
+    /*display: flex;*/
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    margin: 0 auto 30px;
 }
-.section-title h2 {
+.categories li{
+    float: left;
+
+}
+.category span{
+    display: block;
+    color: black;
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 5rem;
+    padding: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor:pointer;
 }
+.selected{
+    font-weight: bold;
+}
+/*full product*/
+.full-product-container{
+    position: fixed;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    margin: 0 auto;
+    min-height: 550px;
+    z-index: 6;
+    visibility: hidden;
+    border: 5px solid red;
+    overflow: hidden;
+}
+.full-product-content{
+    overflow: auto;
+    position: relative;
+    padding: 16px;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+    background: white;
+}
+.full-image-container{
+    display: block;
+    width: 50%;
+    float: left;
+    padding: 0 1px;
+}
+.full-image {
+    max-width: 100%;
+    height: 518px;
+
+}
+.full-product-main{
+
+    width: 50%;
+    display: block;
+    float: left;
+    padding: 0 1px;
+}
+.full-name{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+    margin-top: 25px;
+}
+.full-legend-container{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+.full-legend{
+    font-size: 16px;
+}
+.show-full{
+    visibility: visible;
+}
+.showCart {
+    transform: translateX(0);
+}
+.showOverlay {
+    visibility: visible;
+}
+/*products*/
 .products {
     padding: 82px 0;
     min-height: 100%;
@@ -134,15 +217,64 @@ body {
     grid-column-gap: 30px;
     grid-row-gap: 50px;
 }
-.img {
+@media screen and (min-width: 480px) {
+    .product-padding{
+        padding: 16px;
+    }
+}
+.img-container{
+    display: block;
     position: relative;
+    width: 100%;
+    height: 160px;
+    align-content: center   ;
+    cursor: pointer;
+}
+.img-class{
+    position: relative;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.product-container{
+    height: 364px;
+}
+.product-padding{
+    padding: 8px;
+}
+
+.product-img {
+    display: block;
+    width: 100%;
+    transition: all 0.2s ease-out;
+    border-radius: 5%;
+}
+.img:hover .product-img {
+    opacity: 0.5;
+}
+
+
+@media screen and (min-width: 860px) {
+    .product-container{
+        height: 408px;
+    }
+    .img-container{
+        height: 184px;
+    }
 }
 .bag-btn {
     position: absolute;
-    top: 70%;
+    top: 65%;
     left: 0;
     background: #addb15;
     border: none;
+    z-index: 2;
     text-transform: uppercase;
     padding: 10px 15px;
     font-weight: bold;
@@ -161,22 +293,12 @@ body {
 .fa-shopping-cart {
     margin-right: 10px;
 }
-.product-img {
-    display: block;
-    width: 100%;
-    min-height: 190px;
-    transition: all 0.2s ease-out;
-    border-radius: 5%;
-}
-.img:hover .product-img {
-    opacity: 0.5;
-}
-
 .product h3 {
     text-transform: capitalize;
     font-size: 23px;
     margin-top: 20px;
     text-align: center;
+    cursor: pointer;
 }
 
 .product h4 {
@@ -187,10 +309,7 @@ body {
 .product .price{
     color: #addb15;
 }
-.product h4 strike{
-    color: red;
-}
-
+/*footer*/
 .page-footer{
     display: block;
     position: relative;
@@ -212,19 +331,19 @@ body {
     height: 100%;
     transition: all 0.3s ease-out;
     background: rgba(173, 219, 21, 0.7);
-    z-index: 2;
+    z-index: 5;
     visibility: hidden;
     overflow: hidden;
 }
 .cart {
 
-    overflow: hidden;
+    overflow: auto;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 3;
+    z-index: 6;
     background: peachpuff;
     padding: 30px;
     transition: all 0.3s ease-out;
@@ -261,7 +380,7 @@ body {
     grid-column-gap: 20px;
     margin: 25px 0;
 }
-.cart-item img {
+.cart-item .img-container-cart {
     width: 83px;
     height: 83px;
 }

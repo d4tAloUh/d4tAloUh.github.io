@@ -7,6 +7,7 @@ $(document).ready(launch());
 function getData(url, successCallBack){
     $.ajax({
         url: url,
+        async: false,
         dataType : "json",
         success: successCallBack,
         error: function(xhr, textStatus, errorThrown) {
@@ -48,7 +49,8 @@ function loadVariables() {
                             
                         </div>
                         <h3>` + data[i].name + `</h3>
-                <h4 class="price">$` + data[i].price + `</h4>`;
+                <h4 class="price">$` + data[i].price + `</h4>
+                <div class="information">` + data[i].description + `</div>`;
             $('.products-table').append(product)
             updateAddItemButtons();
         }
@@ -58,6 +60,7 @@ function loadVariables() {
         for (let i = 0; i < data.length; i++) {
             var product = document.createElement('li')
             product.classList.add('category');
+            product.setAttribute('data-id', data[i].id);
             product.innerHTML = '<span>' + data[i].name + '</span> ';
             $('.categories').append(product)
             // updateAddItemButtons();
@@ -77,6 +80,8 @@ function launch() {
     $('.cart-btn').on('click', showCart);
     $('.close-cart').on('click', closeCart);
     $('.clear-cart').on ('click', clearCart);
+    $('.close-full').on ('click', closeFull);
+
     updateAddItemButtons();
     updateRemoveItemButtons();
     updateFullProductListeners();
@@ -85,23 +90,58 @@ function launch() {
 
 
 }
+//add listeners to categories
+
+
 //show full product listeners
 function updateFullProductListeners(){
-    var productss = $('.product');
-    var products = document.getElementsByClassName('product')
-    console.log(productss)
-    console.log(products)
-    console.log(products.length)
-    console.log(productss.length)
-    for (var i = 0; i < products.length; i++) {
-        console.log(i);
-        console.log(products[i]);
-        products[i].addEventListener("touchstart", showFullProduct, false)
-    }
+    $('.product').find('.img').bind('click', showFullProduct);
+    $('.product').find('h3').bind('click', showFullProduct)
 }
 
 function showFullProduct(element){
-    console.log(element);
+    var img;
+    var name;
+    var info;
+    var id;
+    var price;
+    if (element.target.className === 'img-class'){
+        img = element.target.getAttribute('src')
+        id = element.target.parentElement.querySelector('.bag-btn').getAttribute('data-id')
+        info = element.target.parentElement.parentElement.parentElement.querySelector('.information').innerHTML;
+        price = element.target.parentElement.parentElement.parentElement.querySelector('h4').innerHTML;
+        name = element.target.parentElement.parentElement.parentElement.querySelector('h3').innerHTML;
+    }
+    else {
+        img = element.target.parentElement.querySelector('img').getAttribute('src')
+        id = element.target.parentElement.parentElement.querySelector('.bag-btn').getAttribute('data-id')
+        info = element.target.parentElement.querySelector('.information').innerHTML;
+        price = element.target.parentElement.querySelector('h4').innerHTML;
+        name = element.target.innerHTML;
+    }
+    createFullWindow(name,price,img,id,info)
+
+}
+
+function createFullWindow(name, price, img, id, info){
+    var div = document.createElement('div')
+    div.classList.add('full-product-container');
+    div.setAttribute('data-id', id);
+    div.innerHTML = `<div class="full-product-content">
+            <span class="close-full"><i class="far fa-window-close"></i></span>
+            <div class="full-name">`+name + `</div>
+            <div class="full-image-container">
+                <div class="full-image"><img src=" ` + img + ` " class="img-class"></div>
+            </div>
+            <div class="full-product-main">
+                <div class="full-legend-container">
+                    <div class="full-legend"> `+info +`</div>
+                </div>
+            </div>
+            <div class="full-close"></div>
+        </div>`;
+    $('body')[0].append(div);
+    $('.close-full').on('click', closeFull);
 }
 //print functions
 function printListeners(){
@@ -185,6 +225,11 @@ function showCart(){
 function closeCart() {
     document.querySelector('.cart-overlay').classList.remove('showOverlay');
     document.querySelector('.cart').classList.remove('showCart');
+}
+
+function closeFull(element) {
+    var container = $('.full-product-container');
+    container[0].parentElement.removeChild(container[0]);
 }
 
 function addToCartClicked(event) {

@@ -145,11 +145,10 @@ li, ul{
     left: 15%;
     width: 70%;
     margin: 0 auto;
-    min-height: 550px;
+    height: 550px;
     z-index: 6;
-    visibility: hidden;
     border: 5px solid red;
-    overflow: hidden;
+    overflow: visible;
 }
 .full-product-content{
     overflow: auto;
@@ -192,8 +191,11 @@ li, ul{
 .full-legend{
     font-size: 16px;
 }
-.show-full{
-    visibility: visible;
+.close-full{
+    display: block;
+    text-align: right;
+    font-size: 33px;
+    cursor:pointer;
 }
 .showCart {
     transform: translateX(0);
@@ -258,7 +260,9 @@ li, ul{
 .img:hover .product-img {
     opacity: 0.5;
 }
-
+.product .information{
+    display: none;
+}
 
 @media screen and (min-width: 860px) {
     .product-container{

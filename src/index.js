@@ -1,5 +1,6 @@
 import './scss/main.css';
 import $ from 'jquery'
+import 'bootstrap'
 $(document).ready(launch());
 
 
@@ -71,6 +72,7 @@ function loadVariables() {
 
 
 
+
 function launch() {
     loadVariables();
     // getData('https://nit.tron.net.ua/api/product/list', printData);
@@ -79,7 +81,8 @@ function launch() {
     getData('https://nit.tron.net.ua/api/category/list', createCategories);
     $('.cart-btn').on('click', showCart);
     $('.close-cart').on('click', closeCart);
-    $('.clear-cart').on ('click', clearCart);
+    $('.clear-cart').unbind('click').click(clearCart);
+    $('.cart-proceed').unbind('click').click(cartProceed);
     $('.close-full').on ('click', closeFull);
 
     updateAddItemButtons();
@@ -87,11 +90,53 @@ function launch() {
     updateFullProductListeners();
     updateCartTotal()
     printListeners()
-
+    updateCategoriesListeners();
 
 }
-//add listeners to categories
+function cartProceed(name) {
+    $.ajax({
+        type: "POST",
+        url: 'https://nit.tron.net.ua/api/order/add',
+        data: {
+            token: 'x8H_i721iqlF4YP2BTAU',
+            name: 'John',
+            phone: '+38095812344',
+            email: 'crossfire',
+            products1: 5,
+            products2: 52,
+        },
+        success: function (textstatus, xhr) {
+            console.log('da ' + xhr + ' ' + textstatus);
+        },
+        error: function(xhr, textStatus, errorThrown) {
+            alert("An error occured " + xhr.status + " " + textStatus)
+        },
+    });
+}
 
+function removeItems() {
+    var products = $('.product')
+    for (let i = 0; i < products.length; i++) {
+        products[i].parentElement.removeChild(products[i]);
+    }
+}
+
+function getCategoryItems(element) {
+    var id = element.target.parentElement.getAttribute('data-id');
+    $('.selected')[0].classList.remove('selected');
+    element.target.classList.add('selected');
+    removeItems()
+    var url = 'https://nit.tron.net.ua/api/product/list';
+    if (id !== ''){
+        url += '/category/' + id;
+    }
+    getData(url, createElement);
+}
+
+//add listeners to categories
+function updateCategoriesListeners(){
+    $('.category').bind('click', getCategoryItems)
+}
 
 //show full product listeners
 function updateFullProductListeners(){
@@ -105,6 +150,10 @@ function showFullProduct(element){
     var info;
     var id;
     var price;
+
+    if (element.target.className == 'bag-btn'){
+        return false;
+    }
     if (element.target.className === 'img-class'){
         img = element.target.getAttribute('src')
         id = element.target.parentElement.querySelector('.bag-btn').getAttribute('data-id')
@@ -112,7 +161,14 @@ function showFullProduct(element){
         price = element.target.parentElement.parentElement.parentElement.querySelector('h4').innerHTML;
         name = element.target.parentElement.parentElement.parentElement.querySelector('h3').innerHTML;
     }
-    else {
+    else if (element.target.className === 'img-container'){
+        img = element.target.parentElement.querySelector('.img-class').getAttribute('src')
+        id = element.target.parentElement.querySelector('.bag-btn').getAttribute('data-id')
+        info = element.target.parentElement.parentElement.querySelector('.information').innerHTML;
+        price = element.target.parentElement.parentElement.querySelector('h4').innerHTML;
+        name = element.target.parentElement.parentElement.querySelector('h3').innerHTML;
+    }
+    else{
         img = element.target.parentElement.querySelector('img').getAttribute('src')
         id = element.target.parentElement.parentElement.querySelector('.bag-btn').getAttribute('data-id')
         info = element.target.parentElement.querySelector('.information').innerHTML;
@@ -172,7 +228,7 @@ function updateRemoveItemButtons(){
 }
 
 function updateAddItemButtons(){
-    var addToCartButtons = document.getElementsByClassName('bag-btn');
+    var addToCartButtons = $('.bag-btn');
     for (var i = 0; i < addToCartButtons.length; i++) {
         addToCartButtons[i].addEventListener('click', addToCartClicked)
     }
@@ -181,6 +237,7 @@ function updateAddItemButtons(){
 function removeCartItem(element) {
     var id = element.getAttribute('data-id')
     var elem = $('.cart-item').filter('[data-id=' + id +']');
+    console.log(elem)
     elem[0].parentElement.removeChild(elem[0]);
     updateProducts(id);
     updateCartTotal()
@@ -192,7 +249,7 @@ function removeCartItemCall(event){
 }
 
 function updateProducts(id){
-    var product = document.querySelectorAll('[data-id]');
+    var product = $('[data-id]');
     for (var i = 0; i < product.length; i++) {
         if (product[i].getAttribute('data-id') === id){
             var button = document.createElement('button');
@@ -207,12 +264,11 @@ function updateProducts(id){
     updateAddItemButtons();
 }
 function clearCart(){
-    var list = $('.cart-content')[0].childNodes;
+    var list = $('.cart-item');
     for (let i = 0; i < list.length; i++) {
-        updateProducts(list[i].getAttribute('data-id'));
-    }
-    while(list.length>0){
-        list[0].parentElement.removeChild(list[0]);
+        var elem = list[i];
+        elem.parentNode.removeChild(elem)
+        updateProducts(elem.getAttribute('data-id'));
     }
     updateCartTotal();
     closeCart();

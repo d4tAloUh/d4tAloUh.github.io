@@ -38,7 +38,7 @@ li, ul{
     display: flex;
     align-items: center;
     background: #db154a;
-    z-index: 3;
+    z-index: 4;
 }
 .navbar-center {
     width: 100%;
@@ -62,6 +62,7 @@ li, ul{
     right: 0;
     left: auto;
     margin-top: 2px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .dropdown li{
     border: 1px solid black;
@@ -143,11 +144,11 @@ li, ul{
 .full-product-container{
     position: fixed;
     top: 15%;
-    left: 15%;
-    width: 70%;
-    margin: 0 auto;
+    left: 10%;
+    width: 80%;
     height: 550px;
     z-index: 6;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border: 5px solid red;
 }
 .full-product-content{
@@ -175,7 +176,7 @@ li, ul{
 }
 .full-image {
     max-width: 100%;
-    height: 300px;
+    height: 180px;
 }
 .full-product-main{
 
@@ -214,11 +215,11 @@ li, ul{
 }
 .full-legend-container{
     display: block;
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
 }
 .full-legend{
-    font-size: 16px;
+    font-size: 20px;
     word-wrap: break-word;
 }
 @media screen and (max-width: 576px){
@@ -233,11 +234,19 @@ li, ul{
     .full-image-container{
         width: 100%;
     }
+    .full-legend{
+        font-size: 17px;
+    }
     .full-image{
-        height: 130px;
+        height: 190px;
     }
     .full-name{
         font-size: 20px;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    .full-legend{
+        font-size: 25px;
     }
 }
 .close-full{
@@ -424,6 +433,11 @@ input[type=text], select {
 .result {
     font-size: 22px;
     color: #850100;
+}
+.success{
+    color: #b9c1ff;
+    font-weight: bold;
+    font-size: 25px;
 }
 .showCart {
     transform: translateX(0);

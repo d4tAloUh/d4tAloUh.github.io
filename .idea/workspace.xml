@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/index.js" line="212" />
+    <bookmark url="file://$PROJECT_DIR$/src/index.js" line="217" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd0d694f-04d3-4dd8-ac0e-1e990f0b8726" name="Default Changelist" comment="">
@@ -22,69 +22,50 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="489">
-                  <caret line="189" column="33" selection-start-line="189" selection-start-column="33" selection-end-line="189" selection-end-column="33" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                    <element signature="n#!!block;n#getData#0" />
-                    <element signature="e#1897#2276#0" />
-                    <element signature="n#!!block;n#postCart#0" />
-                    <element signature="n#!!block;n#cartProceed#0" />
-                    <element signature="n#!!block;n#printListeners#0" />
-                    <element signature="e#6536#6908#0" />
-                    <element signature="n#!!block;n#updateRemoveItemButtons#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/scss/main.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="693">
-                  <caret line="237" column="5" lean-forward="true" selection-start-line="237" selection-start-column="5" selection-end-line="237" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#6047#6152#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/docs/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="523">
-                  <caret line="49" column="14" lean-forward="true" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
-                  <folding>
-                    <element signature="n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/scss/main.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2305">
-                  <caret line="227" column="7" selection-start-line="227" selection-start-column="7" selection-end-line="227" selection-end-column="7" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="693">
+              <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <element signature="n#!!block;n#getData#0" />
+                <element signature="e#774#2124#0" />
+                <element signature="e#1897#2276#0" />
+                <element signature="n#!!block;n#cartProceed#0" />
+                <element signature="n#!!block;n#updateFullProductButton#0" />
+                <element signature="n#!!block;n#addToCartClickedFull#0" />
+                <element signature="n#!!block;n#printListeners#0" />
+                <element signature="e#6536#6908#0" />
+                <element signature="n#!!block;n#updateRemoveItemButtons#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scss/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="437" column="18" selection-start-line="437" selection-start-column="18" selection-end-line="437" selection-end-column="18" />
+              <folding>
+                <element signature="e#6047#6152#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -117,7 +98,6 @@
       <find>information</find>
       <find>'.product'</find>
       <find>in cart</find>
-      <find>console</find>
       <find>console.log</find>
       <find>res</find>
       <find>clearcart</find>
@@ -127,6 +107,7 @@
       <find>remove</find>
       <find>class</find>
       <find>specPrice</find>
+      <find>console</find>
     </findStrings>
     <replaceStrings>
       <replace>../IMG/img_random.jpg</replace>
@@ -242,18 +223,18 @@
       <option name="presentableId" value="Default" />
       <updated>1573114385067</updated>
       <workItem from="1573114386445" duration="44549000" />
-      <workItem from="1573224922686" duration="19527000" />
+      <workItem from="1573224922686" duration="23213000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64076000" />
+    <option name="totallyTimeSpent" value="67762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09272919" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.071127504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -314,37 +295,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="237" column="5" lean-forward="true" selection-start-line="237" selection-start-column="5" selection-end-line="237" selection-end-column="5" />
+        <state relative-caret-position="448">
+          <caret line="437" column="18" selection-start-line="437" selection-start-column="18" selection-end-line="437" selection-end-column="18" />
           <folding>
             <element signature="e#6047#6152#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="49" column="14" lean-forward="true" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
-          <folding>
-            <element signature="n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="189" column="33" selection-start-line="189" selection-start-column="33" selection-end-line="189" selection-end-column="33" />
+        <state relative-caret-position="693">
+          <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
             <element signature="n#!!block;n#getData#0" />
+            <element signature="e#774#2124#0" />
             <element signature="e#1897#2276#0" />
-            <element signature="n#!!block;n#postCart#0" />
             <element signature="n#!!block;n#cartProceed#0" />
+            <element signature="n#!!block;n#updateFullProductButton#0" />
+            <element signature="n#!!block;n#addToCartClickedFull#0" />
             <element signature="n#!!block;n#printListeners#0" />
             <element signature="e#6536#6908#0" />
             <element signature="n#!!block;n#updateRemoveItemButtons#0" />

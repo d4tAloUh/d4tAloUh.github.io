@@ -103,7 +103,6 @@ function launch() {
 
 
 function postCart(name, phone, email, products) {
-    console.log(products);
     $.post('https://nit.tron.net.ua/api/order/add', {
             token: 'x8H_i721iqlF4YP2BTAU',
             name: name,
@@ -123,6 +122,10 @@ function postCart(name, phone, email, products) {
                     setResult(value);
                 }
             }
+            else {
+                clearCart(false);
+                setResult("Your order has been placed!", "success")
+            }
         });
 }
 
@@ -141,10 +144,17 @@ function removePrevResult() {
     removeElem('result');
 }
 
-function setResult(text) {
+function setResult(text, success) {
     var result = document.createElement('div')
     result.classList.add('result');
     result.innerHTML = `<p> ` + text + `</p>`;
+    if (success !== undefined){
+        result.classList.add('success')
+        var formsInput = $('.formInput');
+        for (let i = 0; i < formsInput.length; i++) {
+            formsInput[i].value = '';
+        }
+    }
     $('.form').append(result)
 }
 
@@ -164,12 +174,7 @@ function cartProceed() {
     var name = $('#fname').val();
     var email = $('#email').val();
     var phone = $('#phone').val();
-    // console.log(name)
-    // console.log(email)
-    // console.log(phone)
-    // console.log(products);
     postCart(name, phone, email, products)
-    // $('.cart-items')
 }
 
 function removeItems() {
@@ -238,11 +243,9 @@ function showFullProduct(element) {
         name = element.target.innerHTML;
         button = element.target.parentElement.parentElement.querySelector('.bag-btn');
     }
-    console.log(specPrice);
     createFullWindow(name, price, img, id, info, specPrice, button)
 
 }
-
 
 
 function createFullWindow(name, price, img, id, info, specPrice, button) {
@@ -277,14 +280,13 @@ function createFullWindow(name, price, img, id, info, specPrice, button) {
     $('.close-full').on('click', closeFull);
 }
 
-function updateFullProductButton(event){
+function updateFullProductButton(event) {
     var id = event.target.getAttribute('data-id');
-    console.log(id)
     var button = $('.bag-btn').filter('[data-id=' + id + ']')[0];
-    console.log(button);
     button.innerText = "In Cart";
     button.disabled = true;
 }
+
 function addToCartClickedFull(event) {
     updateFullProductButton(event);
     addToCartClicked(event);
@@ -329,7 +331,6 @@ function updateAddItemButtons() {
 function removeCartItem(element) {
     var id = element.getAttribute('data-id')
     var elem = $('.cart-item').filter('[data-id=' + id + ']');
-    // console.log(elem)
     elem[0].parentElement.removeChild(elem[0]);
     updateProducts(id);
     updateCartTotal()
@@ -356,7 +357,7 @@ function updateProducts(id) {
     updateAddItemButtons();
 }
 
-function clearCart() {
+function clearCart(close = true) {
     var list = $('.cart-item');
     for (let i = 0; i < list.length; i++) {
         var elem = list[i];
@@ -364,10 +365,11 @@ function clearCart() {
         updateProducts(elem.getAttribute('data-id'));
     }
     updateCartTotal();
-    closeCart();
+    if (close) closeCart();
 }
 
 function showCart() {
+    closeFull();
     document.querySelector('.cart-overlay').classList.add('showOverlay');
     document.querySelector('.cart').classList.add('showCart');
 }
@@ -379,7 +381,12 @@ function closeCart() {
 
 function closeFull(element) {
     var container = $('.full-product-container');
+    if (container.length < 1) {
+        return false;
+    }
+    // delete full window
     container[0].parentElement.removeChild(container[0]);
+
 }
 
 function addToCartClicked(event) {

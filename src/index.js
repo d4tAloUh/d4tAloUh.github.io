@@ -61,6 +61,12 @@ function loadVariables() {
                 saleElem.innerHTML = '$' + sale;
             }
             product.querySelector('.product-padding').append(saleElem);
+            var items = $('.cart-item').filter('[data-id=' + data[i].id + ']')[0]
+            if (items !== undefined){
+                var button = (product.querySelector('button'));
+                button.innerText = "In Cart";
+                button.disabled = true;
+            }
             $('.products-table').append(product)
             updateAddItemButtons();
         }
@@ -103,17 +109,16 @@ function launch() {
 
 
 function postCart(name, phone, email, products) {
-    $.post('https://nit.tron.net.ua/api/order/add', {
+    $.post('https://nit.tron.net.ua/api/order/add/', {
             token: 'x8H_i721iqlF4YP2BTAU',
             name: name,
             phone: phone,
             async: false,
             email: email,
-            products: {1: 2, 4: 2}
+            products: {}
 
         },
         function (data, textStatus, jqXHR) {
-            console.log(textStatus);
             console.log(data.status);
             removePrevResult();
             if (data.status === 'error') {
@@ -128,7 +133,7 @@ function postCart(name, phone, email, products) {
             }
         });
 }
-
+// function for removing every element of any class
 function removeElem(element) {
     element = '.' + element;
     var elements = $(element);
@@ -402,13 +407,17 @@ function addToCartClicked(event) {
     var specPrice = parseFloat(shopItem.querySelector('.specPrice')
         .innerHTML.slice(1)).toFixed(2);
     var imageSrc = shopItem.querySelector('img').getAttribute('src');
-    addItemToCart(name, price, imageSrc, id, specPrice);
+    addItemToCart(name, price, imageSrc, id, specPrice, button);
     updateCartTotal()
     updateRemoveItemButtons();
 }
 
-function addItemToCart(title, price, imageSrc, id, specPrice) {
+function addItemToCart(title, price, imageSrc, id, specPrice, button) {
     var div = document.createElement('div');
+    var items = $('.cart-item').filter('[data-id=' + id + ']')[0]
+    if (items !== undefined){
+        return false;
+    }
     div.classList.add('cart-item');
     if (specPrice > 0) {
         price = specPrice;

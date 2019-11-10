@@ -79,7 +79,7 @@ function loadVariables() {
             product.setAttribute('data-id', data[i].id);
             product.innerHTML = '<span>' + data[i].name + '</span> ';
             $('.categories').append(product)
-            // updateAddItemButtons();
+            updateAddItemButtons();
         }
 
     }
@@ -92,17 +92,14 @@ function launch() {
     //make grid of elements
     getData('https://nit.tron.net.ua/api/product/list', createElement);
     getData('https://nit.tron.net.ua/api/category/list', createCategories);
+    // button listeners
     $('.cart-btn').on('click', showCart);
     $('.close-cart').on('click', closeCart);
     $('.clear-cart').unbind('click').click(clearCart);
     $('.cart-proceed').unbind('click').click(cartProceed);
     $('.close-full').on('click', closeFull);
-    cartProceed()
-    updateAddItemButtons();
-    updateRemoveItemButtons();
-    updateFullProductListeners();
-    updateCartTotal()
     printListeners()
+    // categories listeners
     updateCategoriesListeners();
 
 }
@@ -323,7 +320,6 @@ function updateRemoveItemButtons() {
         var button = removeCartItemButtons[i];
         button.addEventListener('click', removeCartItemCall)
     }
-    updateCartTotal()
 }
 
 function updateAddItemButtons() {

@@ -1,6 +1,6 @@
 import './scss/main.css';
-import $ from 'jquery'
 import 'bootstrap'
+import $ from 'jquery';
 
 $(document).ready(launch());
 
@@ -44,7 +44,7 @@ function loadVariables() {
                     <div class="product-padding">
                         <div class="img">
                     <span class="img-container">
-                    <img class="img-class" src= ` + data[i].image_url + ` alt="product" class="product-img">
+                    <img class="img-class" src= ` + data[i].image_url + ` alt="` +data[i].name + `" class="product-img">
                         <button class="bag-btn" data-id="` + data[i].id + `">
                                 <i class="fas fa-shopping-cart"></i>
                                 add to cart
@@ -101,6 +101,7 @@ function launch() {
     printListeners()
     // categories listeners
     updateCategoriesListeners();
+    updateFullProductListeners()
 
 }
 
@@ -112,11 +113,10 @@ function postCart(name, phone, email, products) {
             phone: phone,
             async: false,
             email: email,
-            products: {}
+            products: products,
 
         },
         function (data, textStatus, jqXHR) {
-            console.log(data.status);
             removePrevResult();
             if (data.status === 'error') {
                 for (var key in data.errors) {
@@ -131,6 +131,7 @@ function postCart(name, phone, email, products) {
         });
 }
 // function for removing every element of any class
+// takes element as class without .
 function removeElem(element) {
     element = '.' + element;
     var elements = $(element);
@@ -162,17 +163,14 @@ function setResult(text, success) {
 
 function cartProceed() {
     var items = $('.cart-item');
-    var products = '';
+    var products = {};
     //return if no items in cart
     if (items.length < 1) {
         return false;
     }
     for (let i = 0; i < items.length; i++) {
-        products += items[i].getAttribute('data-id') + ':'
-            + items[i].querySelector('.item-amount').innerHTML
-            + ', ';
+        products[parseInt(items[i].getAttribute('data-id'))] = parseInt(items[i].querySelector('.item-amount').innerHTML);
     }
-    products = products.slice(0, -2);
     var name = $('#fname').val();
     var email = $('#email').val();
     var phone = $('#phone').val();
@@ -216,8 +214,7 @@ function showFullProduct(element) {
     var price;
     var specPrice;
     var button
-
-    if (element.target.className === 'bag-btn') {
+    if (element.target.className === 'bag-btn' || element.target.className === 'fas fa-shopping-cart') {
         return false;
     }
     if (element.target.className === 'img-class') {
@@ -257,7 +254,8 @@ function createFullWindow(name, price, img, id, info, specPrice, button) {
             <span class="close-full"><i class="far fa-window-close"></i></span>
             <div class="full-name name">` + name + `</div>
             <div class="full-image-container">
-                <div class="full-image"><img src=" ` + img + ` " class="img-class"></div>
+                <div class="full-image"><img src=" ` + img + ` " alt="` +  name + `" class="img-class"></div>
+                
                 <h4 class="price">` + price + `</h4>
                 <h4 class="specPrice">` + specPrice + `</h4>
                 <div class="button-wrap">
@@ -392,6 +390,9 @@ function closeFull(element) {
 
 function addToCartClicked(event) {
     var button = event.target;
+    if (button.className ==='fas fa-shopping-cart'){
+        button = button.parentElement;
+    }
     button.innerText = "In Cart";
     button.disabled = true;
     var shopItem = button.parentElement.parentElement.parentElement;
@@ -403,12 +404,12 @@ function addToCartClicked(event) {
     var specPrice = parseFloat(shopItem.querySelector('.specPrice')
         .innerHTML.slice(1)).toFixed(2);
     var imageSrc = shopItem.querySelector('img').getAttribute('src');
-    addItemToCart(name, price, imageSrc, id, specPrice, button);
+    addItemToCart(name, price, imageSrc, id, specPrice);
     updateCartTotal()
     updateRemoveItemButtons();
 }
 
-function addItemToCart(title, price, imageSrc, id, specPrice, button) {
+function addItemToCart(title, price, imageSrc, id, specPrice) {
     var div = document.createElement('div');
     var items = $('.cart-item').filter('[data-id=' + id + ']')[0]
     if (items !== undefined){

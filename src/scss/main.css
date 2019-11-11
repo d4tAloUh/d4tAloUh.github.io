@@ -120,6 +120,7 @@ li, ul{
     /*display: flex;*/
     align-items: center;
     width: 80%;
+    max-width: 1170px;
     justify-content: space-between;
     padding: 0 1.5rem;
     margin: 0 auto 90px;

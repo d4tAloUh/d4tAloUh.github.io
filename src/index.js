@@ -77,7 +77,7 @@ function loadVariables() {
             var product = document.createElement('li')
             product.classList.add('category');
             product.setAttribute('data-id', data[i].id);
-            product.innerHTML = '<span>' + data[i].name + '</span> ';
+            product.innerHTML = `` + data[i].name ;
             $('.categories').append(product)
             updateAddItemButtons();
         }
@@ -182,7 +182,7 @@ function removeItems() {
 }
 
 function getCategoryItems(element) {
-    var id = element.target.parentElement.getAttribute('data-id');
+    var id = element.target.getAttribute('data-id');
     $('.selected')[0].classList.remove('selected');
     element.target.classList.add('selected');
     removeItems()

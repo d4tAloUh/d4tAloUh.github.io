@@ -207,6 +207,7 @@ function updateFullProductListeners() {
 }
 
 function showFullProduct(element) {
+    closeFull();
     var img;
     var name;
     var info;

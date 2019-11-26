@@ -123,7 +123,7 @@ li, ul{
     max-width: 1210px;
     justify-content: space-between;
     padding: 0 1.5rem;
-    margin: 0 auto 90px;
+    margin: 0 auto 130px;
 }
 .categories li{
     float: left;
@@ -356,6 +356,9 @@ li, ul{
 }
 .fa-shopping-cart {
     margin-right: 10px;
+}
+.products-table-container{
+    width: 100%;
 }
 .product h3 {
     text-transform: capitalize;

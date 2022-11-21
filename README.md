@@ -17,4 +17,14 @@ Works!
 
 </details>
 
+<details><summary><a href="https://hello.ca">link inner 2</a></summary>
+
+<details><summary><a href="https://hello.ca">link inner twice 2</a></summary>
+
+Works!
+
+</details>
+
+</details>
+
 </details>

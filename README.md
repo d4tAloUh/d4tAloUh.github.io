@@ -5,6 +5,8 @@ Colons can be used to align columns.
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
+![Alt text](https://github.com/MarinaD2107/Edelman-Trust-Barometer/blob/main/Screenshot%202022-11-24%20at%2013.59.43.png "ZeDuche")
+
 <details><summary><a href="https://hello.ca">link text</a></summary>
 
 <details><summary><a href="https://hello.ca">link inner</a></summary>

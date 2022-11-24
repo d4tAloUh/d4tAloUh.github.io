@@ -32,7 +32,7 @@ Test | Second test
   <figcaption>This is my caption text second.</figcaption>
 </figure>
 <figure>
-  <img src="[https://i.guim.co.uk/img/media/d3c5b4baa48a22f855faa58084b9b92f21f1d1b8/0_35_1043_626/master/1043.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=38d6f2b9e0670e4d0961dffc9699709e" alt="my alt text"/>
+  <img src="https://i.guim.co.uk/img/media/d3c5b4baa48a22f855faa58084b9b92f21f1d1b8/0_35_1043_626/master/1043.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=38d6f2b9e0670e4d0961dffc9699709e" alt="my alt text"/>
   <figcaption>This is my caption text.</figcaption>
 </figure>
 </p>

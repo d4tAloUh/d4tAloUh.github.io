@@ -11,7 +11,7 @@ Colons can be used to align columns.
 
 <details><summary><a href="https://hello.ca">link inner twice</a></summary>
 
-Works!
+![Alt text](https://cloudfront-us-east-2.images.arcpublishing.com/reuters/D3VLTTMOY5OT7LDAWRIHRX7VBQ.jpg "ZeDuche")
 
 </details>
 

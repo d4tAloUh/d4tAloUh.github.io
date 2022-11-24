@@ -1,5 +1,5 @@
 - [L'histoire de l'IDH](#l-histoire-de-l-idh)
-- [Comment est calculé l’Indice de Développement Humain ?](#comment-est-calcul--l-indice-de-d-veloppement-humain--)
+- [Comment est calculé l’Indice de Développement Humain ?](#Comment-est-calculé-l’Indice-de-Développement-Humain-?)
   * [Formules](#formules)
     + [I - Création des indices dimensionnels](#i---cr-ation-des-indices-dimensionnels)
     + [II – Calcul de la moyenne géométrique des sous-indices](#ii---calcul-de-la-moyenne-g-om-trique-des-sous-indices)

@@ -27,14 +27,14 @@ Test | Second test
 <img src="https://images.english.elpais.com/resizer/HznP62qMXjPLq7e0P3RDPwZu5qw=/414x0/filters:focal(367x112:377x122)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/45I3EA7A7NHSHKYCXLW6AWU4YQ.jpg" height="200" /><img src="https://i.guim.co.uk/img/media/d3c5b4baa48a22f855faa58084b9b92f21f1d1b8/0_35_1043_626/master/1043.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=38d6f2b9e0670e4d0961dffc9699709e" height="200" />
 
 <p float="left">
-  <p>
-    <img src="https://images.english.elpais.com/resizer/HznP62qMXjPLq7e0P3RDPwZu5qw=/414x0/filters:focal(367x112:377x122)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/45I3EA7A7NHSHKYCXLW6AWU4YQ.jpg" alt>
-    <em>image_caption 4325234</em>
-</p>
-  <p>
-    <img src="https://i.guim.co.uk/img/media/d3c5b4baa48a22f855faa58084b9b92f21f1d1b8/0_35_1043_626/master/1043.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=38d6f2b9e0670e4d0961dffc9699709e" alt>
-    <em>image_caption 123123</em>
-</p>
+	<figure>
+  <img src="https://images.english.elpais.com/resizer/HznP62qMXjPLq7e0P3RDPwZu5qw=/414x0/filters:focal(367x112:377x122)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/45I3EA7A7NHSHKYCXLW6AWU4YQ.jpg" alt="my alt text"/>
+  <figcaption>This is my caption text second.</figcaption>
+</figure>
+<figure>
+  <img src="[https://i.guim.co.uk/img/media/d3c5b4baa48a22f855faa58084b9b92f21f1d1b8/0_35_1043_626/master/1043.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=38d6f2b9e0670e4d0961dffc9699709e" alt="my alt text"/>
+  <figcaption>This is my caption text.</figcaption>
+</figure>
 </p>
 
 

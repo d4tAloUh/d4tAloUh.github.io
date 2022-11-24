@@ -40,21 +40,18 @@ Test | Second test
 </p>
 
 # FLEXBOX
-<div id="image-table">
-    <table>
-	    <tr>
-    	    <td style="padding:10px">
-        	    <img src="https://i.guim.co.uk/img/media/d3c5b4baa48a22f855faa58084b9b92f21f1d1b8/0_35_1043_626/master/1043.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=38d6f2b9e0670e4d0961dffc9699709e" width="200"/>
-		    <p>CAPTION THIS</p>
-      	    </td>
-            <td style="padding:10px">
-            	<img src="https://images.english.elpais.com/resizer/HznP62qMXjPLq7e0P3RDPwZu5qw=/414x0/filters:focal(367x112:377x122)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/45I3EA7A7NHSHKYCXLW6AWU4YQ.jpg" width="300"/>
-		    
-		    <p>CAPTION THAT</p>
-            </td>
-        </tr>
-    </table>
-</div>
+<table>
+    <tr>
+    <td style="padding:10px">
+	    <img src="https://i.guim.co.uk/img/media/d3c5b4baa48a22f855faa58084b9b92f21f1d1b8/0_35_1043_626/master/1043.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=38d6f2b9e0670e4d0961dffc9699709e" width="200"/>
+	    <p>CAPTION THIS</p>
+    </td>
+    <td style="padding:10px">
+	<img src="https://images.english.elpais.com/resizer/HznP62qMXjPLq7e0P3RDPwZu5qw=/414x0/filters:focal(367x112:377x122)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/45I3EA7A7NHSHKYCXLW6AWU4YQ.jpg" width="300"/>
+	    <p>CAPTION THAT</p>
+    </td>
+</tr>
+</table>
 
 <img  align="right" src="https://zims-fr.kiwix.campusafrica.gos.orange.com/wikipedia_fr_all_maxi/I/m/Mahbub-ul-Haq.jpg">
 

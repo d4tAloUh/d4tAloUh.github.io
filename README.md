@@ -1,3 +1,17 @@
+- [L'histoire de l'IDH](#l-histoire-de-l-idh)
+- [Comment est calculé l’Indice de Développement Humain ?](#comment-est-calcul--l-indice-de-d-veloppement-humain--)
+  * [Formules](#formules)
+    + [I - Création des indices dimensionnels](#i---cr-ation-des-indices-dimensionnels)
+    + [II – Calcul de la moyenne géométrique des sous-indices](#ii---calcul-de-la-moyenne-g-om-trique-des-sous-indices)
+- [Les usages de l'IDH](#les-usages-de-l-idh)
+  * [I - Les principaux usages de l’IDH](#i---les-principaux-usages-de-l-idh)
+  * [II - Les usages détournés répondant à des phénomènes de société actuels](#ii---les-usages-d-tourn-s-r-pondant---des-ph-nom-nes-de-soci-t--actuels)
+- [L’IDH n’est pas parfait](#l-idh-n-est-pas-parfait)
+  * [I - Les critiques de L’IDH](#i---les-critiques-de-l-idh)
+  * [II - Qu’en pense le PNUD ?](#ii---qu-en-pense-le-pnud--)
+  * [Bibliographie](#bibliographie)
+  * [Julien Meunier, Laura Rey-Baron, Célestin Pineaud et Fayssal Yazami](#julien-meunier--laura-rey-baron--c-lestin-pineaud-et-fayssal-yazami)
+
 <h1 align="center"><FONT size ="20pt">Vie sociale des données : Enquête sur l'Indice de développement Humain (IDH)</FONT></h1>
 
 
